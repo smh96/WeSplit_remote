@@ -9,13 +9,16 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationStack {
+            Form {
+                Section {
+                    Text("Hello World!")
+                }
+            }
+            // Apply Titel to the Form View, not the NavigationStack
+            .navigationTitle("WeSplit")
+            .navigationBarTitleDisplayMode(.inline)
         }
-        .padding()
     }
 }
 
