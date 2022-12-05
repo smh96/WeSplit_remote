@@ -8,14 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    // Observes change of name
+   @State private var name = ""
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        Form {
+            // updates name variable after input
+            // Two way binding: bind textfield so any changes made are updated to property
+            TextField("Enter your name", text: $name)
+            Text("Your name is \(name)")
         }
-        .padding()
     }
 }
 
