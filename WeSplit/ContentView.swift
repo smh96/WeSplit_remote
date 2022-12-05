@@ -8,14 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    // @State allows to workaround limitation of structs. Hence structs are fixed.
+    // @State here are for simpel properties, stored in 1 view
+   @State private var tapCount = 0
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        Button("Tapcount: \(tapCount)") {
+            tapCount += 1
         }
-        .padding()
+        
+        
+        
     }
 }
 
