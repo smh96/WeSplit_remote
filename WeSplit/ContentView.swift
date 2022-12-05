@@ -44,7 +44,6 @@ struct ContentView: View {
                 Section {
                     Text(checkAmount, format: .currency(code: Locale.current.currency?.identifier ?? "EUR"))
                 }
-                Text("Hallo wereld")
             }
             .navigationTitle("WeSplit")
         }
