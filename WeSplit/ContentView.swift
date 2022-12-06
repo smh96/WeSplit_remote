@@ -34,15 +34,6 @@ struct ContentView: View {
                     TextField("Amount", value: $checkAmount, format: .currency(code: Locale.current.currency?.identifier ?? "EUR"))
                         .keyboardType(.decimalPad)
                         .focused($isFocused)
-                        .toolbar {
-                            ToolbarItemGroup(placement: .keyboard) {
-                                Spacer()
-                                
-                                Button("Done") {
-                                    isFocused = false
-                                }
-                            }
-                        }
                     
                     Picker(selection: $numberOfPeople, label: Text("Select participants")) {
                         ForEach(2..<26) {
@@ -67,6 +58,15 @@ struct ContentView: View {
                 }
             }
             .navigationTitle("WeSplit")
+            .toolbar {
+                ToolbarItemGroup(placement: .keyboard) {
+                    Spacer()
+                    
+                    Button("Done") {
+                        isFocused = false
+                    }
+                }
+            }
         }
     }
 }
